@@ -1,6 +1,6 @@
 public class Position {
-	private final String POSITION_STRING = "-";
-	private final int INITIAL_POSITION = 0;
+	private static final String POSITION_STRING = "-";
+	private static final int INITIAL_POSITION = 0;
 
 	private int position;
 
@@ -18,12 +18,12 @@ public class Position {
 
 	@Override
 	public String toString() {
-		String positionToString = "";
+		StringBuffer sb = new StringBuffer();
 
 		for (int i = 0; i < position; i++) {
-			positionToString += POSITION_STRING;
+			sb.append(POSITION_STRING);
 		}
 
-		return positionToString;
+		return sb.toString();
 	}
 }
