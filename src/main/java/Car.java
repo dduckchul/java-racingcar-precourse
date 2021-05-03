@@ -1,24 +1,18 @@
 public class Car {
-	private final String positionString = "-";
 	private String name;
-	private int position;
+	private Position position;
 
 	public Car(String name) {
 		this.name = name;
+		this.position = new Position();
 	}
 
 	public void move() {
-		this.position++;
+		position.goForward();
 	}
 
 	@Override
 	public String toString() {
-		String positionToString = "";
-
-		for (int i = 0; i < position; i++) {
-			positionToString += positionString;
-		}
-
-		return name + " : " + positionToString;
+		return name + " : " + position.toString();
 	}
 }
