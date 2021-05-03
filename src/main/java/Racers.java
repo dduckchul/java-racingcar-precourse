@@ -14,16 +14,16 @@ public class Racers {
 	}
 
 	private void validateCarString(String carString) {
-		if (carString == null) {
+		if (carString == null || carString.length() < 1) {
 			throw new IllegalArgumentException("빈 문자열은 입력 불가합니다.");
 		}
 	}
 
 	private List<Car> stringToCarList(String carString) {
-		List<Car> list = new ArrayList();
+		List<Car> list = new ArrayList<>();
 		String [] carArray = carString.split(",");
-		for (int i = 0; i < carArray.length; i++) {
-			list.add(new Car(carArray[i]));
+		for (String carName : carArray) {
+			list.add(new Car(carName));
 		}
 		return list;
 	}
