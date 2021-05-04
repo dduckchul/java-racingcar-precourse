@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.List;
 
 public class CarRacing {
@@ -32,6 +33,23 @@ public class CarRacing {
 	}
 
 	public void announceWinner() {
+		List<Car> carList = racers.getCarList();
+		Collections.sort(carList);
 
+		Position firstPlacePosition = carList.get(0).getPosition();
+		StringBuffer sb = new StringBuffer();
+		for (Car car : carList) {
+			sb.append(getWinnerName(car, firstPlacePosition));
+		}
+		sb.append(CarRacingString.WINNER_ANNOUNCE_STRING);
+
+		IoUtils.printMsg(sb.toString());
+	}
+
+	public String getWinnerName(Car car, Position firstPlacePosition) {
+		if (car.getPosition().getPosition() == firstPlacePosition.getPosition()) {
+			return car.getName() + ",";
+		}
+		return "";
 	}
 }
