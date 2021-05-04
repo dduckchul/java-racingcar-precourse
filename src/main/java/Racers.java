@@ -19,7 +19,7 @@ public class Racers {
 
 	private void validateCarString(String carString) {
 		if (carString == null || carString.length() < 1) {
-			throw new IllegalArgumentException("빈 문자열은 입력 불가합니다.");
+			throw new IllegalArgumentException(CarRacingString.RACERS_EXCEPTION_MSG);
 		}
 	}
 

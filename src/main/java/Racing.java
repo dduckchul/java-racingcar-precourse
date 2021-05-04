@@ -14,7 +14,7 @@ public class Racing {
 
 	public void validateRace(int loop) {
 		if (loop < MIN_LOOPS) {
-			throw new IllegalArgumentException("최저 1바퀴를 입력해 주세요");
+			throw new IllegalArgumentException(CarRacingString.RACING_EXCEPTION_MSG);
 		}
 	}
 
