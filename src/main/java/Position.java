@@ -16,6 +16,10 @@ public class Position {
 		position--;
 	}
 
+	public int getPosition() {
+		return position;
+	}
+
 	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();

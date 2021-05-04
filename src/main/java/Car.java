@@ -7,6 +7,10 @@ public class Car {
 		this.position = new Position();
 	}
 
+	public Position getPosition() {
+		return position;
+	}
+
 	public void move() {
 		position.goForward();
 	}
