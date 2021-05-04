@@ -1,4 +1,4 @@
-public class Car {
+public class Car implements Comparable<Car> {
 	private String name;
 	private Position position;
 
@@ -22,5 +22,10 @@ public class Car {
 	@Override
 	public String toString() {
 		return name + " : " + position.toString();
+	}
+
+	@Override
+	public int compareTo(Car compareCar) {
+		return position.compareTo(compareCar.position);
 	}
 }

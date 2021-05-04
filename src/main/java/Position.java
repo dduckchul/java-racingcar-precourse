@@ -1,4 +1,4 @@
-public class Position {
+public class Position implements Comparable<Position> {
 	private static final String POSITION_STRING = "-";
 	private static final int INITIAL_POSITION = 0;
 
@@ -29,5 +29,10 @@ public class Position {
 		}
 
 		return sb.toString();
+	}
+
+	@Override
+	public int compareTo(Position comparePosition) {
+		return position < comparePosition.getPosition() ? 1 : (position == comparePosition.getPosition()) ? 0 : -1;
 	}
 }
