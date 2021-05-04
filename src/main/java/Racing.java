@@ -2,6 +2,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Racing {
 	private static final int MIN_LOOPS = 1;
+	private static final int MOVE_MIN_VALUE = 4;
 	private final int loop;
 
 	public Racing(int loop) {
@@ -21,7 +22,7 @@ public class Racing {
 
 	public void doRace(Car car) {
 		int randomNum = ThreadLocalRandom.current().nextInt(0, 9);
-		if (randomNum >= 4) {
+		if (randomNum >= MOVE_MIN_VALUE) {
 			car.move();
 		}
 	}
