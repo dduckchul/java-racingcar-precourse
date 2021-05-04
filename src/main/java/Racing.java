@@ -1,3 +1,5 @@
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Racing {
 	private static final int MIN_LOOPS = 1;
 	private final int loop;
@@ -13,7 +15,14 @@ public class Racing {
 		}
 	}
 
-	public boolean doRace(){
+	public int getLoop() {
+		return loop;
+	}
 
+	public void doRace(Car car) {
+		int randomNum = ThreadLocalRandom.current().nextInt(0, 9);
+		if (randomNum >= 4) {
+			car.move();
+		}
 	}
 }
