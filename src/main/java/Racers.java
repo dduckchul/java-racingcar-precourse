@@ -13,6 +13,10 @@ public class Racers {
 		this.carList = carList;
 	}
 
+	public List<Car> getCarList() {
+		return carList;
+	}
+
 	private void validateCarString(String carString) {
 		if (carString == null || carString.length() < 1) {
 			throw new IllegalArgumentException("빈 문자열은 입력 불가합니다.");
