@@ -3,6 +3,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Racing {
 	private static final int MIN_LOOPS = 1;
 	private static final int MOVE_MIN_VALUE = 4;
+	private static final int MIN_RANDOM_INT = 0;
+	private static final int MAX_RANDOM_INT = 9;
 	private final int loop;
 
 	public Racing(int loop) {
@@ -21,7 +23,7 @@ public class Racing {
 	}
 
 	public void doRace(Car car) {
-		int randomNum = ThreadLocalRandom.current().nextInt(0, 9);
+		int randomNum = ThreadLocalRandom.current().nextInt(MIN_RANDOM_INT, MAX_RANDOM_INT);
 		if (randomNum >= MOVE_MIN_VALUE) {
 			car.move();
 		}
