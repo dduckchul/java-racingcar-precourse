@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Position implements Comparable<Position> {
 	private static final String POSITION_STRING = "-";
 	private static final int INITIAL_POSITION = 0;
@@ -34,5 +36,20 @@ public class Position implements Comparable<Position> {
 	@Override
 	public int compareTo(Position comparePosition) {
 		return position < comparePosition.getPosition() ? 1 : (position == comparePosition.getPosition()) ? 0 : -1;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Position position1 = (Position)o;
+		return position == position1.position;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(position);
 	}
 }
